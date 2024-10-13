@@ -232,6 +232,8 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 60;
 
+
+        return;
         // GameManager가 중복으로 생성되지 않도록 처리
         if (instance == null)
         {
