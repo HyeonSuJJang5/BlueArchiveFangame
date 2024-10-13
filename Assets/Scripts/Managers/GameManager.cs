@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI friedRicePriceText; // 현재 판매 가격 표시 TextMeshProUGUI
 
     // 기존 가격 데이터 유지
+    [SerializeField]
     private int[] friedRicePrices = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 19, 22, 26, 31, 37, 44, 52, 62, 74, 88, 105, 126, 151, 181, 217, 260, 312, 374, 448, 537, 644, 772, 926, 1111, 1333, 1599, 1918, 2301, 2761, 3313, 3975, 4770, 5724, 6868, 8241, 9889, 11866 };
 
     // 새롭게 제공된 sale 데이터
@@ -73,6 +74,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI ramenPriceText; // 현재 판매 가격 표시 TextMeshProUGUI
 
     // 기존 가격 데이터 유지
+    [SerializeField]
     private int[] ramenPrices = { 40, 48, 57, 68, 81, 97, 116, 139, 166, 199, 238, 285, 342, 410, 492, 590, 708, 849, 1018, 1221, 1465, 1758, 2109, 2530, 3036, 3643, 4371, 5245, 6294, 7552, 9062, 10874, 13048, 15657, 18788, 22545, 27054, 32464, 38956, 46747, 56096, 67315, 80778, 96933, 116319, 139582, 167498, 200997, 241196, 289435 };
 
     // 새롭게 제공된 sale 데이터
@@ -87,6 +89,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI steakPriceText; // 현재 판매 가격 표시 TextMeshProUGUI
 
     // 기존 가격 데이터 유지
+    [SerializeField]
     private int[] steakPrices = { 2000, 2400, 2880, 3460, 4150, 4980, 5970, 7170, 8600, 10320, 12380, 14860, 17830, 21390, 25670, 30800, 36960, 44360, 53230, 63870, 76650, 91980, 110370, 132440, 158930, 190720, 228860, 274630, 329560, 395470, 474560, 569480, 683370, 820050, 984050, 1180860, 1417040, 1700440, 2040530, 2448640, 2938360, 3526040, 4231240, 5077490, 6092990, 7311590, 8773900, 10528680, 12634420, 15161300 };
 
     // 새롭게 제공된 sale 데이터
@@ -314,6 +317,7 @@ public class GameManager : MonoBehaviour
 
         // Serving 및 Chef 추가 버튼 초기화
         servingAddButton.onClick.AddListener(AddServing);
+        
         chefAddButton.onClick.AddListener(AddChef);
 
         // 비용 텍스트 초기화
@@ -339,6 +343,9 @@ public class GameManager : MonoBehaviour
         thirdSpeedPostion_Button.onClick.AddListener(() => IncreaseMoveSpeed(0.2f));
 
         // 스킬 업그레이드 버튼에 클릭 이벤트 등록
+        servingAddButton.onClick.AddListener(() => HandleSkillUpgrade(servingAddButton, Serving_UIListltem, 200));
+        chefAddButton.onClick.AddListener(() => HandleSkillUpgrade(chefAddButton, Chef_UIListltem, 400));
+
         firstCookingTime_Button.onClick.AddListener(() => HandleSkillUpgrade(firstCookingTime_Button, firstCookingTime_UIListltem, 1000));
         secoundCookingTime_Button.onClick.AddListener(() => HandleSkillUpgrade(secoundCookingTime_Button, secoundCookingTime_UIListltem, 1600));
 
@@ -405,7 +412,7 @@ public class GameManager : MonoBehaviour
 
     public void NextStageGo()
     {
-        SceneManager.LoadScene("Secound_GameScene");
+        SceneManager.LoadScene("Second_GameScene");
     }
 
     // 요리 시간 감소 함수
@@ -788,7 +795,7 @@ public class GameManager : MonoBehaviour
         {
             steakLevelUpButtonText.text = "Max";
             steakLevelUpButton.interactable = false;
-            friedRiceLevelText.text = "Lv.10"; // 최대 레벨 텍스트 업데이트
+            steakLevelText.text = "Lv.10"; // 최대 레벨 텍스트 업데이트
         }
 
         UpdateStarImages(steakLevel, steakStarImages);

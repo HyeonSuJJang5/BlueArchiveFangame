@@ -1927,7 +1927,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC138\uB9AC\uCE74 "
+  m_text: "\uC138\uB9AC\uCE74"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -3941,7 +3941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d521f7678704788409999aacea923edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Serving: {fileID: 244559897}
+  Serving: {fileID: 1119813454}
   Chef: {fileID: 1302838696}
   chefManager: {fileID: 303788947}
   chairManager: {fileID: 0}
@@ -3961,6 +3961,7 @@ MonoBehaviour:
   - {fileID: 148765607}
   friedRiceLevelUpButtonText: {fileID: 1408967479}
   friedRicePriceText: {fileID: 1473082988}
+  friedRicePrices: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000c0000000e0000001000000013000000160000001a0000001f000000250000002c000000340000003e0000004a00000058000000690000007e00000097000000b5000000d9000000040100003801000076010000c00100001902000084020000040300009e03000057040000350500003f0600007e070000fd080000c90a0000f10c0000870f0000a21200005c160000d41a000031200000a12600005a2e0000
   ramenLevel: 1
   ramenLevelUpButton: {fileID: 1395741217}
   ramenGaugeBar: {fileID: 221457827}
@@ -3970,6 +3971,7 @@ MonoBehaviour:
   - {fileID: 417433032}
   ramenLevelUpButtonText: {fileID: 54110583}
   ramenPriceText: {fileID: 2139505516}
+  ramenPrices: 280000003000000039000000440000005100000061000000740000008b000000a6000000c7000000ee0000001d010000560100009a010000ec0100004e020000c402000051030000fa030000c5040000b9050000de0600003d080000e2090000dc0b00003b0e0000131100007d14000096180000801d0000662300007a2a0000f8320000293d00006449000011580000ae690000d07e00002c9800009bb6000020db0000f30601008a3b0100a57a01005fc601003e2102004a8e0200251103002cae03009b6a0400
   steakLevel: 1
   steakLevelUpButton: {fileID: 1900046063}
   steakGaugeBar: {fileID: 1732085998}
@@ -3979,6 +3981,7 @@ MonoBehaviour:
   - {fileID: 1435194525}
   steakLevelUpButtonText: {fileID: 961090265}
   steakPriceText: {fileID: 1496954375}
+  steakPrices: d007000060090000400b0000840d0000361000007413000052170000021c000098210000502800005c3000000c3a0000a64500008e53000046640000507800006090000048ad0000eecf00007ef900006a2b01004c67010022af010058050200d26c020000e90200fc7d0300c630040058070500ce080600c03d070088b008006a6d0a0052830c00f2030f00bc041200509f150058f21900d2221f00005d2500f8d52c0098cd350048904000f2794d00bef85c00e6906f000ce18500a8a7a00034c9c000d457e700
   friedRicePanel: {fileID: 31937682}
   ramenPanel: {fileID: 431591338}
   steakPanel: {fileID: 324136055}
@@ -4149,7 +4152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &244559898
 Transform:
   m_ObjectHideFlags: 0
@@ -11520,8 +11523,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   servers:
-  - {fileID: 1119813457}
   - {fileID: 244559900}
+  - {fileID: 1119813457}
 --- !u!1 &749182588
 GameObject:
   m_ObjectHideFlags: 0
@@ -15513,7 +15516,7 @@ RectTransform:
   m_GameObject: {fileID: 987099831}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.63, y: 0.55, z: 0.6003137}
+  m_LocalScale: {x: 0.63, y: 0.48932815, z: 0.6003137}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 884190380}
@@ -15522,7 +15525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -8.000015, y: 0}
+  m_AnchoredPosition: {x: -8.000015, y: -1}
   m_SizeDelta: {x: 1620, y: 108}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &987099833
@@ -16526,7 +16529,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.00074386597}
-  m_SizeDelta: {x: 100, y: 245.77254}
+  m_SizeDelta: {x: 100, y: 178.74367}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1069262900
 MonoBehaviour:
@@ -17220,7 +17223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1119813456
 Transform:
   m_ObjectHideFlags: 0
@@ -19574,7 +19577,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB8E8\uBBF8"
+  m_text: "\uC6B0\uBBF8\uCE74"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -23121,8 +23124,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1119813456}
   - {fileID: 244559898}
+  - {fileID: 1119813456}
   m_Father: {fileID: 1642778333}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28978,7 +28981,7 @@ RectTransform:
   m_GameObject: {fileID: 1750517247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0011967, y: 1.3527392, z: 1.0012172}
+  m_LocalScale: {x: 1.1859547, y: 1.6023699, z: 1.185979}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 198832980}
@@ -28986,8 +28989,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 11, y: 6}
-  m_SizeDelta: {x: 379, y: 270}
+  m_AnchoredPosition: {x: 91.859985, y: 12}
+  m_SizeDelta: {x: 212, y: 196}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1750517249
 MonoBehaviour:
@@ -29009,7 +29012,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 81680d54904413a4a873d7bb9925314d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 340d37ade415ad843b0848c34b1c2922, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
