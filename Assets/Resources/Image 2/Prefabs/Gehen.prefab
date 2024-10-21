@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1021915142758597853}
   - component: {fileID: 5969653639271074851}
   - component: {fileID: 5777073361686944471}
-  - component: {fileID: 4928809613464971061}
   m_Layer: 0
   m_Name: Gehen
   m_TagString: Trinity
@@ -54,6 +53,7 @@ MonoBehaviour:
   cooldownUIPrefab: {fileID: 3942179428350091200, guid: e428a8d7bb6bcaa4490060a73749d624, type: 3}
   spawnableStage: 02000000
   spawnWeight: 300
+  uniqueGuest: 0
 --- !u!212 &5777073361686944471
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -106,27 +106,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4928809613464971061
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6168441650252378514}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 50de049a77d26fb48ab86ce2bcc9c393, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7710046269032859583
 GameObject:
   m_ObjectHideFlags: 0
