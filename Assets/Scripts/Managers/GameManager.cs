@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -860,15 +861,43 @@ public class GameManager : MonoBehaviour
         UpdateFillImage(); // Fill Image 업데이트
     }
 
+    [Space(9), Header("음식 레벨의 별 활성화 레벨")]
+    [SerializeField, Range(1, 2)] private int stage = 1;
+    [System.Serializable] private class ActiveLevels
+    {
+        [Range(1, 2)] public int stage = 1;
+
+        public List<int> targetLevels;
+
+        public bool IsActive(int index, int currentLevel)
+        {
+            if (targetLevels == null || targetLevels.Count <= 0) return false;
+            if (index >= targetLevels.Count) return false;
+
+            return targetLevels[index] <= currentLevel;
+        }
+    }
+
+    [SerializeField] private List<ActiveLevels> activeStarCondition; 
+
+
     // 별 이미지 업데이트 (레벨에 따라 별 활성화)
     void UpdateStarImages(int level, List<Image> starImages)
     {
-        if (level >= 3)
-            starImages[0].gameObject.SetActive(true);
-        if (level >= 7)
-            starImages[1].gameObject.SetActive(true);
-        if (level >= 10)
-            starImages[2].gameObject.SetActive(true);
+        ActiveLevels target = activeStarCondition.FirstOrDefault(x => x.stage == stage);
+        target ??= activeStarCondition.FirstOrDefault();
+
+        for (int i = 0; i < starImages.Count; i++)
+        {
+            starImages[i].gameObject.SetActive(target.IsActive(i, level));
+        }
+
+        //if (level >= 3)
+        //    starImages[0].gameObject.SetActive(true);
+        //if (level >= 7)
+        //    starImages[1].gameObject.SetActive(true);
+        //if (level >= 10)
+        //    starImages[2].gameObject.SetActive(true);
     }
 
     // 스테이크 레벨업
