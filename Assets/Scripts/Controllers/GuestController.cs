@@ -427,13 +427,13 @@ public class GuestController : MonoBehaviour
             switch (order)
             {
                 case Order.Steak:
-                    spritePath = "UI/Speech_Bubles/Steak Speech Buble";
+                    spritePath = $"UI/Speech_Bubles/{(GameManager.CurrentStage == 1 ? "Steak" : "Takoyaki")} Speech Buble";
                     break;
                 case Order.Ramen:
-                    spritePath = "UI/Speech_Bubles/Ramen Speech Buble";
+                    spritePath = $"UI/Speech_Bubles/{(GameManager.CurrentStage == 1 ? "Ramen" : "Udon")} Speech Buble";
                     break;
                 case Order.FriedRice:
-                    spritePath = "UI/Speech_Bubles/FriedRice Speech Buble";
+                    spritePath = $"UI/Speech_Bubles/{(GameManager.CurrentStage == 1 ? "FriedRice" : "Chicken")} Speech Buble";
                     break;
             }
 

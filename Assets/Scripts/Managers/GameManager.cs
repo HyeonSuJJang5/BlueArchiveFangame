@@ -228,11 +228,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // 몰라 걍 귀찮음
+    public static int CurrentStage { get; private set; } = 1;
+
     // 게임 초기화 로직 등을 추가할 수 있습니다.
     private void Awake()
     {
         Application.targetFrameRate = 60;
-
+        CurrentStage = stage;
 
         return;
         // GameManager가 중복으로 생성되지 않도록 처리
@@ -792,14 +795,13 @@ public class GameManager : MonoBehaviour
         {
             steakLevelUpButtonText.text = FormatPrice(steakPrices[steakLevel - 1]);
             steakPriceText.text = FormatPrice(steakSales[steakLevel - 1]);
-            steakLevelText.text = "Lv." + steakLevel; // 레벨 텍스트 업데이트
         }
         else
         {
             steakLevelUpButtonText.text = "Max";
             steakLevelUpButton.interactable = false;
-            steakLevelText.text = $"Lv.{steakLevel}"; // 최대 레벨 텍스트 업데이트
         }
+        steakLevelText.text = $"Lv.{steakLevel}"; // 최대 레벨 텍스트 업데이트
 
         UpdateStarImages(steakLevel, steakStarImages);
         steakGaugeBar.fillAmount = (float)steakLevel / steakPrices.Length;
@@ -816,16 +818,15 @@ public class GameManager : MonoBehaviour
         {
             friedRiceLevelUpButtonText.text = FormatPrice(friedRicePrices[friedRiceLevel - 1]);
             friedRicePriceText.text = FormatPrice(friedRiceSales[friedRiceLevel - 1]);
-            friedRiceLevelText.text = "Lv." + friedRiceLevel; // 레벨 텍스트 업데이트
 
         }
         else
         {
             friedRiceLevelUpButtonText.text = "Max";
             friedRiceLevelUpButton.interactable = false;
-            friedRiceLevelText.text = $"Lv.{friedRiceLevel}"; // 최대 레벨 텍스트 업데이트
 
         }
+        friedRiceLevelText.text = $"Lv.{friedRiceLevel}"; // 최대 레벨 텍스트 업데이트
 
         UpdateStarImages(friedRiceLevel, friedRiceStarImages);
         friedRiceGaugeBar.fillAmount = (float)friedRiceLevel / friedRicePrices.Length;
@@ -842,16 +843,15 @@ public class GameManager : MonoBehaviour
         {
             ramenLevelUpButtonText.text = FormatPrice(ramenPrices[ramenLevel - 1]);
             ramenPriceText.text = FormatPrice(ramenSales[ramenLevel - 1]);
-            ramenLevelText.text = "Lv." + ramenLevel; // 레벨 텍스트 업데이트
         }
         else
         {
             ramenLevelUpButtonText.text = "Max";
             ramenLevelUpButton.interactable = false;
-            ramenLevelText.text = $"Lv.{ramenLevel}"; // 최대 레벨 텍스트 업데이트
 
 
         }
+            ramenLevelText.text = $"Lv.{ramenLevel}"; // 최대 레벨 텍스트 업데이트
 
         UpdateStarImages(ramenLevel, ramenStarImages);
         ramenGaugeBar.fillAmount = (float)ramenLevel / ramenPrices.Length;
