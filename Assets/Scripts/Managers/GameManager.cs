@@ -798,7 +798,7 @@ public class GameManager : MonoBehaviour
         {
             steakLevelUpButtonText.text = "Max";
             steakLevelUpButton.interactable = false;
-            steakLevelText.text = "Lv.10"; // 최대 레벨 텍스트 업데이트
+            steakLevelText.text = $"Lv.{steakLevel}"; // 최대 레벨 텍스트 업데이트
         }
 
         UpdateStarImages(steakLevel, steakStarImages);
@@ -823,7 +823,7 @@ public class GameManager : MonoBehaviour
         {
             friedRiceLevelUpButtonText.text = "Max";
             friedRiceLevelUpButton.interactable = false;
-            friedRiceLevelText.text = "Lv.10"; // 최대 레벨 텍스트 업데이트
+            friedRiceLevelText.text = $"Lv.{friedRiceLevel}"; // 최대 레벨 텍스트 업데이트
 
         }
 
@@ -848,7 +848,7 @@ public class GameManager : MonoBehaviour
         {
             ramenLevelUpButtonText.text = "Max";
             ramenLevelUpButton.interactable = false;
-            ramenLevelText.text = "Lv.10"; // 최대 레벨 텍스트 업데이트
+            ramenLevelText.text = $"Lv.{ramenLevel}"; // 최대 레벨 텍스트 업데이트
 
 
         }
