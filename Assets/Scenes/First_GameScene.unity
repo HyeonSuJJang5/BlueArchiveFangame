@@ -34955,6 +34955,11 @@ MonoBehaviour:
   trinityPrefab: {fileID: 6168441650252378514, guid: 1bddbecfea1713b4fb4a2bcef8636ce8, type: 3}
   spawnPoint: {fileID: 2123197677}
   respawnTime: 10
+  guests:
+  - {fileID: 1994063320662748997, guid: aef484b627facd44e85c9589964b44aa, type: 3}
+  - {fileID: 5969653639271074851, guid: 1bddbecfea1713b4fb4a2bcef8636ce8, type: 3}
+  - {fileID: 5969653639271074851, guid: de80d3cf1b92eb44d8163cd3c1663596, type: 3}
+  - {fileID: 5969653639271074851, guid: 494d09c949d9fbe4188e58caa6166fe7, type: 3}
 --- !u!1 &2133005436
 GameObject:
   m_ObjectHideFlags: 0

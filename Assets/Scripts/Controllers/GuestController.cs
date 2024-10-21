@@ -56,8 +56,7 @@ public class GuestController : MonoBehaviour
 
     private bool isMillennium = false; // Millennium 캐릭터 여부를 저장하는 변수
 
-
-
+   
     private void Start()
     {
         aStarManager = FindObjectOfType<AStarManager>();
@@ -644,6 +643,7 @@ public class GuestController : MonoBehaviour
         StartCoroutine(MoveToEndZone());
     }
 
+    public event Action OnExitGuest;
     // EndZone으로 이동
     private IEnumerator MoveToEndZone()
     {
@@ -658,6 +658,21 @@ public class GuestController : MonoBehaviour
         }
 
         Debug.Log(name + "이(가) EndZone에 도착하여 가게를 나갑니다.");
+        OnExitGuest?.Invoke();
         Destroy(gameObject);
     }
+
+    // 소환 가능한 스테이지 목록
+    [SerializeField] private List<int> spawnableStage;
+    public bool IsSpawnable(int stage)
+    {
+        return spawnableStage.Contains(stage);
+    }
+
+    // 소환 가중치
+    [SerializeField] private int spawnWeight = 100;
+    public int SpawnWeight => spawnWeight;
+
+    [SerializeField] private bool uniqueGuest = false;
+    public bool IsUniqueGuest => uniqueGuest;
 }

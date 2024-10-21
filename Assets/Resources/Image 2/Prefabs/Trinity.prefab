@@ -51,6 +51,8 @@ MonoBehaviour:
   height: 2
   coolTime_height: 2
   cooldownUIPrefab: {fileID: 3942179428350091200, guid: e428a8d7bb6bcaa4490060a73749d624, type: 3}
+  spawnableStage: 0100000002000000
+  spawnWeight: 300
 --- !u!212 &5777073361686944471
 SpriteRenderer:
   m_ObjectHideFlags: 0
