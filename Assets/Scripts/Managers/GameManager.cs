@@ -971,10 +971,10 @@ public class GameManager : MonoBehaviour
             skillUpgradeButton?.onClick.RemoveAllListeners();
 
             // 활성화되지 않은 경우
-            if(!active)
+            if (!active)
             {
-                skillObject?.SetActive(false);
-                characterObject?.SetActive(false);
+                if (skillObject != null) skillObject.SetActive(false);
+                if (characterObject != null) characterObject?.SetActive(false);
                 return;
             }
 
