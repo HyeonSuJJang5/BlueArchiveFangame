@@ -26,9 +26,11 @@ public class ServingController : MonoBehaviour
     private Animator animator;
     private bool isMoving;
 
-    private bool isSerika; // 루미 캐릭터 여부를 저장하는 변수
+    private bool isSerika; // 세리카 캐릭터 여부를 저장하는 변수
 
-    private bool isShizuko; // 루미 캐릭터 여부를 저장하는 변수
+    private bool isShizuko; // 시즈코 캐릭터 여부를 저장하는 변수
+
+    private bool isFuuka;
 
     // 시작 위치와 돌아갈 위치 추가
     [SerializeField] private Transform startingPosition; // 시작 위치
@@ -52,6 +54,12 @@ public class ServingController : MonoBehaviour
         {
             isShizuko = true;
             startingPosition = GameObject.Find("Shizuko").transform; // Shizuko의 시작 위치
+
+        }
+        else if (gameObject.name == "Fuuka")
+        {
+            isShizuko = true;
+            startingPosition = GameObject.Find("Fuuka").transform; // Shizuko의 시작 위치
 
         }
 
@@ -95,6 +103,8 @@ public class ServingController : MonoBehaviour
                         animator.Play("Serika Default Right Move");
                     else if (isShizuko)
                         animator.Play("Shizuko Default Right Move");
+                    else if (isFuuka)
+                        animator.Play("Shizuko Default Right Move");
                 }
                 else
                 {
@@ -102,6 +112,8 @@ public class ServingController : MonoBehaviour
                     if (isSerika)
                         animator.Play("Serika Default Left Move");
                     else if (isShizuko)
+                        animator.Play("Shizuko Default Left Move");
+                    else if (isFuuka)
                         animator.Play("Shizuko Default Left Move");
                 }
             }
@@ -114,6 +126,8 @@ public class ServingController : MonoBehaviour
                         animator.Play("Serika Defualt Up Move");
                     else if (isShizuko)
                         animator.Play("Shizuko Defualt Up Move");
+                    else if (isFuuka)
+                        animator.Play("Shizuko Defualt Up Move");
                 }
                 else
                 {
@@ -121,6 +135,8 @@ public class ServingController : MonoBehaviour
                     if (isSerika)
                         animator.Play("Serika Default Down Move");
                     else if (isShizuko)
+                        animator.Play("Shizuko Default Down Move");
+                    else if (isFuuka)
                         animator.Play("Shizuko Default Down Move");
                 }
             }
@@ -132,6 +148,8 @@ public class ServingController : MonoBehaviour
             if (isSerika)
                 animator.Play("Serika Idle");
             else if (isShizuko)
+                animator.Play("Shizuko Idle");
+            else if (isFuuka)
                 animator.Play("Shizuko Idle");
         }
 

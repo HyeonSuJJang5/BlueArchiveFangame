@@ -119,7 +119,7 @@ public class ChefController : MonoBehaviour
         }
         else if (gameObject.name == "Siba")
         {
-            isSiba = true;
+            isRumi = true;
             startingPosition = GameObject.Find("Siba").transform; // Siba의 시작 위치
             returnPosition = GameObject.Find("Siba").transform; // Siba의 돌아갈 위치
         }
@@ -152,7 +152,7 @@ public class ChefController : MonoBehaviour
                     else if (isUmika)
                         animator.Play("Umika Front Cooking"); // Umika 스테이크 요리 애니메이션
                     else if (isSiba)
-                        animator.Play("Siba Front Cooking"); // Siba 스테이크 요리 애니메이션
+                        animator.Play("Rumi Front Cooking"); // Siba 스테이크 요리 애니메이션
                     break;
                 case GuestController.Order.FriedRice:
                     if (isRumi)
@@ -160,7 +160,7 @@ public class ChefController : MonoBehaviour
                     else if (isUmika)
                         animator.Play("Umika Left Cooking"); // Umika 볶음밥 요리 애니메이션
                     else if (isSiba)
-                        animator.Play("Siba Left Cooking"); // Siba 볶음밥 요리 애니메이션
+                        animator.Play("Rumi Left Cooking"); // Siba 볶음밥 요리 애니메이션
                     break;
                 case GuestController.Order.Ramen:
                     if (isRumi)
@@ -168,7 +168,7 @@ public class ChefController : MonoBehaviour
                     else if (isUmika)
                         animator.Play("Umika Right Cooking"); // Umika 라멘 요리 애니메이션
                     else if (isSiba)
-                        animator.Play("Siba Right Cooking"); // Siba 라멘 요리 애니메이션
+                        animator.Play("Rumi Right Cooking"); // Siba 라멘 요리 애니메이션
                     break;
             }
         }
@@ -188,7 +188,7 @@ public class ChefController : MonoBehaviour
                 else if (isUmika)
                     animator.Play("Umika Default Left Move");
                 else if (isSiba)
-                    animator.Play("Siba Default Left Move");
+                    animator.Play("Rumi Default Left Move");
             }
             else if (movementDirection == Vector2.right)
             {
@@ -197,7 +197,7 @@ public class ChefController : MonoBehaviour
                 else if (isUmika)
                     animator.Play("Umika Default Right Move");
                 else if (isSiba)
-                    animator.Play("Siba Default Right Move");
+                    animator.Play("Rumi Default Right Move");
             }
             else if (movementDirection == Vector2.up)
             {
@@ -206,7 +206,7 @@ public class ChefController : MonoBehaviour
                 else if (isUmika)
                     animator.Play("Umika Defualt Up Move");
                 else if (isSiba)
-                    animator.Play("Siba Defualt Up Move");
+                    animator.Play("Rumi Defualt Up Move");
             }
             else if (movementDirection == Vector2.down)
             {
@@ -215,7 +215,7 @@ public class ChefController : MonoBehaviour
                 else if (isUmika)
                     animator.Play("Umika Default Down Move");
                 else if (isSiba)
-                    animator.Play("Siba Default Down Move");
+                    animator.Play("Rumi Default Down Move");
             }
 
             // 마지막 위치 업데이트
@@ -231,7 +231,7 @@ public class ChefController : MonoBehaviour
             else if (isUmika)
                 animator.Play("Umika Idle");
             else if (isSiba)
-                animator.Play("Siba Idle");
+                animator.Play("Rumi Idle");
         }
     }
 
