@@ -973,8 +973,8 @@ public class GameManager : MonoBehaviour
             // 활성화되지 않은 경우
             if(!active)
             {
-                skillObject.SetActive(false);
-                characterObject.SetActive(false);
+                skillObject?.SetActive(false);
+                characterObject?.SetActive(false);
                 return;
             }
 
