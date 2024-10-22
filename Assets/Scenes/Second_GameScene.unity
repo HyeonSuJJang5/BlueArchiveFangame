@@ -4406,14 +4406,14 @@ MonoBehaviour:
     skillObject: {fileID: 1492087993}
     skillUpgradeButton: {fileID: 614915785}
     priceText: {fileID: 788936639}
-    price: 2000
+    price: 10
   thirdServerSkill:
     active: 1
     characterObject: {fileID: 42165049}
     skillObject: {fileID: 422806605}
     skillUpgradeButton: {fileID: 1198289821}
     priceText: {fileID: 1579466849}
-    price: 2000
+    price: 10
 --- !u!114 &241133919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5271,7 +5271,7 @@ GameObject:
   - component: {fileID: 298452528}
   - component: {fileID: 298452527}
   m_Layer: 5
-  m_Name: Siroko
+  m_Name: Fuuka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5286,7 +5286,7 @@ RectTransform:
   m_GameObject: {fileID: 298452525}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.053, y: 1.395225, z: 1.053}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1030215890}
@@ -5294,7 +5294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -722.2, y: 13}
+  m_AnchoredPosition: {x: -732.2499, y: 13}
   m_SizeDelta: {x: 379, y: 270}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &298452527
@@ -18277,7 +18277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 25.900024, y: 1085.5}
+  m_AnchoredPosition: {x: 25.875, y: 1085.5}
   m_SizeDelta: {x: 559, y: 155}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1100865183
@@ -21034,7 +21034,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB8E8\uBBF8"
+  m_text: "\uC6B0\uBBF8\uCE74"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -30813,7 +30813,7 @@ GameObject:
   - component: {fileID: 1750517250}
   - component: {fileID: 1750517249}
   m_Layer: 5
-  m_Name: Rumi
+  m_Name: Umika
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30828,7 +30828,7 @@ RectTransform:
   m_GameObject: {fileID: 1750517247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0011967, y: 1.3527392, z: 1.0012172}
+  m_LocalScale: {x: 1.1516767, y: 1.5560559, z: 1.1517003}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 198832980}
@@ -30836,8 +30836,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 11, y: 6}
-  m_SizeDelta: {x: 379, y: 270}
+  m_AnchoredPosition: {x: 95, y: 7}
+  m_SizeDelta: {x: 212, y: 196}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1750517249
 MonoBehaviour:
@@ -30859,7 +30859,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 81680d54904413a4a873d7bb9925314d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 340d37ade415ad843b0848c34b1c2922, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
