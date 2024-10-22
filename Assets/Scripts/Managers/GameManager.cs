@@ -366,6 +366,9 @@ public class GameManager : MonoBehaviour
 
         // Fill Image 업데이트
         levelProgressImage.fillAmount = 0;
+
+        // 2스테 추가 캐릭터
+        InitializeAdditiveCharacter();
     }
 
 
@@ -948,5 +951,57 @@ public class GameManager : MonoBehaviour
         PlayerMoney -= amount;
         Text_Gold.text = FormatPrice(PlayerMoney);  // 포맷팅 적용
         Debug.Log("자산 차감: " + amount + ", 현재 점수: " + FormatPrice(PlayerMoney));
+    }
+
+
+    [System.Serializable] private class CharacterUpgradeSkill
+    {
+        [SerializeField] private bool active = false;
+
+        [SerializeField] private GameObject characterObject;
+
+        [SerializeField] private GameObject skillObject;
+
+        [SerializeField] private Button skillUpgradeButton;
+        [SerializeField] private TMPro.TextMeshProUGUI priceText;
+        [SerializeField] private int price;
+
+        public void Initailize(GameManager manager)
+        {
+            skillUpgradeButton?.onClick.RemoveAllListeners();
+
+            // 활성화되지 않은 경우
+            if(!active)
+            {
+                skillObject.SetActive(false);
+                characterObject.SetActive(false);
+                return;
+            }
+
+            priceText.text = $"{price}";
+            skillUpgradeButton?.onClick.AddListener(() =>
+            {
+                if (manager.PlayerMoney < price) return;
+
+                manager.DeductCurrency(price);
+                skillObject.SetActive(false);
+                characterObject.SetActive(true);
+            });
+        }
+    }
+
+    //// 추가 셰프 및 서버 관리
+    // 추가 요리사
+    [Header("third chef")]
+    [SerializeField] private CharacterUpgradeSkill thirdChefSkill;
+
+    // 추가 서버
+    [Header("third server")]
+    [SerializeField] private CharacterUpgradeSkill thirdServerSkill;
+
+    private void InitializeAdditiveCharacter()
+    {
+        thirdChefSkill?.Initailize(this);
+        thirdServerSkill?.Initailize(this);
     }
 }
