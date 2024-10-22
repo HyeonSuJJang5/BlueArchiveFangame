@@ -531,9 +531,14 @@ public class ChefController : MonoBehaviour
     {
         foreach (Vector3 point in path)
         {
-            while (transform.position != point)
+            //while (transform.position != point)
+            while (!(transform.position.x == point.x && transform.position.y == point.y))
             {
-                transform.position = Vector3.MoveTowards(transform.position, point, moveSpeed * Time.deltaTime);
+                //transform.position = Vector3.MoveTowards(transform.position, point, moveSpeed * Time.deltaTime);
+                Vector3 pos = Vector3.MoveTowards(transform.position, point, moveSpeed * Time.deltaTime);
+                pos.z = (pos.y / 1000f) + ((float)transform.GetSiblingIndex() / 100f);
+
+                transform.position = pos;
                 yield return null;
             }
         }

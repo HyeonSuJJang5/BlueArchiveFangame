@@ -302,7 +302,13 @@ public class ServingController : MonoBehaviour
         {
             while (Vector3.Distance(transform.position, waypoint) > 0.1f)
             {
-                transform.position = Vector3.MoveTowards(transform.position, waypoint, moveSpeed * Time.deltaTime);
+                //transform.position = Vector3.MoveTowards(transform.position, waypoint, moveSpeed * Time.deltaTime);
+                //yield return null;
+
+                Vector3 pos = Vector3.MoveTowards(transform.position, waypoint, moveSpeed * Time.deltaTime);
+                pos.z = (pos.y / 1000f) + ((float)transform.GetSiblingIndex() / 100f);
+
+                transform.position = pos;
                 yield return null;
             }
         }
