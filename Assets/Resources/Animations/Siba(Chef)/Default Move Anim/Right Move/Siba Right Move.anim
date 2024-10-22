@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Siba Left Walk
+  m_Name: Siba Right Move
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: f65a7c5040148e14893f0dee967cfef7, type: 3}
+      value: {fileID: 21300000, guid: c81b515665842414a8168f6318a48502, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: cd1ac3f3551c0804a871e21e5055ab2b, type: 3}
+      value: {fileID: 21300000, guid: b6753d8f7d9bba64ca9d8c28410be91d, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,8 +46,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: f65a7c5040148e14893f0dee967cfef7, type: 3}
-    - {fileID: 21300000, guid: cd1ac3f3551c0804a871e21e5055ab2b, type: 3}
+    - {fileID: 21300000, guid: c81b515665842414a8168f6318a48502, type: 3}
+    - {fileID: 21300000, guid: b6753d8f7d9bba64ca9d8c28410be91d, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
