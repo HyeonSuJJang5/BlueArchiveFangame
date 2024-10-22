@@ -419,9 +419,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    [SerializeField] private GameObject devPopup;
+    private bool _openedPopup = false;
+
     public void NextStageGo()
     {
+        if (SceneManager.GetActiveScene().name.Equals("Second_GameScene"))
+        {
+            if (_openedPopup) return;
+
+            _openedPopup = true;
+            devPopup.SetActive(true);
+            StartCoroutine(FadeOutPopup());
+            return;
+        }
+
         SceneManager.LoadScene("Second_GameScene");
+    }
+
+    private IEnumerator FadeOutPopup()
+    {
+        yield return new WaitForSeconds(2f);
+        _openedPopup = false;
+        devPopup.SetActive(false);
     }
 
     // 요리 시간 감소 함수
