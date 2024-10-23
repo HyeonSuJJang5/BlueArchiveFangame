@@ -4035,12 +4035,27 @@ MonoBehaviour:
   steakLevelText: {fileID: 1519338152}
   friedRiceLevelText: {fileID: 1113528675}
   ramenLevelText: {fileID: 1901070331}
+  devPopup: {fileID: 0}
   stage: 1
   activeStarCondition:
   - stage: 0
     targetLevels: 03000000070000000a000000
   - stage: 2
     targetLevels: 0a0000001900000032000000
+  thirdChefSkill:
+    active: 0
+    characterObject: {fileID: 0}
+    skillObject: {fileID: 0}
+    skillUpgradeButton: {fileID: 0}
+    priceText: {fileID: 0}
+    price: 0
+  thirdServerSkill:
+    active: 0
+    characterObject: {fileID: 0}
+    skillObject: {fileID: 0}
+    skillUpgradeButton: {fileID: 0}
+    priceText: {fileID: 0}
+    price: 0
 --- !u!114 &241133919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34419,6 +34434,7 @@ GameObject:
   - component: {fileID: 2094640993}
   - component: {fileID: 2094640992}
   - component: {fileID: 2094640991}
+  - component: {fileID: 2094640994}
   m_Layer: 5
   m_Name: SettingGUI
   m_TagString: Untagged
@@ -34528,6 +34544,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094640989}
   m_CullTransparentMesh: 1
+--- !u!114 &2094640994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094640989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd39720d1344f7d45acf969714819239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartTime: 2
 --- !u!1 &2095799540
 GameObject:
   m_ObjectHideFlags: 0
