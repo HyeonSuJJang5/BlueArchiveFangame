@@ -342,30 +342,30 @@ public class GameManager : MonoBehaviour
         servingAddButton.onClick.AddListener(() => HandleSkillUpgrade(servingAddButton, Serving_UIListltem, 500));
         chefAddButton.onClick.AddListener(() => HandleSkillUpgrade(chefAddButton, Chef_UIListltem, 300));
 
-        firstCookingTime_Button.onClick.AddListener(() => HandleSkillUpgrade(firstCookingTime_Button, firstCookingTime_UIListltem, 500));
-        secoundCookingTime_Button.onClick.AddListener(() => HandleSkillUpgrade(secoundCookingTime_Button, secoundCookingTime_UIListltem, 800));
+        firstCookingTime_Button.onClick.AddListener(() => HandleSkillUpgrade(firstCookingTime_Button, firstCookingTime_UIListltem, 500, () => ReduceCookingTime(0.2f)));
+        secoundCookingTime_Button.onClick.AddListener(() => HandleSkillUpgrade(secoundCookingTime_Button, secoundCookingTime_UIListltem, 800, () => ReduceCookingTime(0.3f)));
 
-        first_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(first_IncreaseFoodPrice_Button, first_IncreaseFoodPrice_UIListltem, 600));
-        secound_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(secound_IncreaseFoodPrice_Button, secound_IncreaseFoodPrice_UIListltem, 800));
-        third_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(third_IncreaseFoodPrice_Button, third_IncreaseFoodPrice_UIListltem, 1500));
-        fourth_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(fourth_IncreaseFoodPrice_Button, fourth_IncreaseFoodPrice_UIListltem, 2000));
+        first_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(first_IncreaseFoodPrice_Button, first_IncreaseFoodPrice_UIListltem, 600, () => IncreaseFoodPrices(0.1f)));
+        secound_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(secound_IncreaseFoodPrice_Button, secound_IncreaseFoodPrice_UIListltem, 800, () => IncreaseFoodPrices(0.2f)));
+        third_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(third_IncreaseFoodPrice_Button, third_IncreaseFoodPrice_UIListltem, 1500, () => IncreaseFoodPrices(0.3f)));
+        fourth_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(fourth_IncreaseFoodPrice_Button, fourth_IncreaseFoodPrice_UIListltem, 2000, () => IncreaseFoodPrices(0.4f)));
 
-        firstSpeedPostion_Button.onClick.AddListener(() => HandleSkillUpgrade(firstSpeedPostion_Button, firstSpeedPostion_UIListltem, 700));
-        secoundSpeedPostion_Button.onClick.AddListener(() => HandleSkillUpgrade(secoundSpeedPostion_Button, secoundSpeedPostion_UIListltem, 900));
-        thirdSpeedPostion_Button.onClick.AddListener(() => HandleSkillUpgrade(thirdSpeedPostion_Button, thirdSpeedPostion_UIListltem, 1500));
+        firstSpeedPostion_Button.onClick.AddListener(() => HandleSkillUpgrade(firstSpeedPostion_Button, firstSpeedPostion_UIListltem, 700, () => IncreaseMoveSpeed(0.1f)));
+        secoundSpeedPostion_Button.onClick.AddListener(() => HandleSkillUpgrade(secoundSpeedPostion_Button, secoundSpeedPostion_UIListltem, 900, () => IncreaseMoveSpeed(0.2f)));
+        thirdSpeedPostion_Button.onClick.AddListener(() => HandleSkillUpgrade(thirdSpeedPostion_Button, thirdSpeedPostion_UIListltem, 1500, () => IncreaseMoveSpeed(0.2f)));
 
         // 기존 버튼 이벤트 등록
-        firstCookingTime_Button.onClick.AddListener(() => ReduceCookingTime(0.2f)); // 20% 감소
-        secoundCookingTime_Button.onClick.AddListener(() => ReduceCookingTime(0.3f)); // 30% 감소
+        //firstCookingTime_Button.onClick.AddListener(() => ReduceCookingTime(0.2f)); // 20% 감소
+        //secoundCookingTime_Button.onClick.AddListener(() => ReduceCookingTime(0.3f)); // 30% 감소
 
-        first_IncreaseFoodPrice_Button.onClick.AddListener(() => IncreaseFoodPrices(0.1f));
-        secound_IncreaseFoodPrice_Button.onClick.AddListener(() => IncreaseFoodPrices(0.2f));
-        third_IncreaseFoodPrice_Button.onClick.AddListener(() => IncreaseFoodPrices(0.3f));
-        fourth_IncreaseFoodPrice_Button.onClick.AddListener(() => IncreaseFoodPrices(0.4f));
+        //first_IncreaseFoodPrice_Button.onClick.AddListener(() => IncreaseFoodPrices(0.1f));
+        //secound_IncreaseFoodPrice_Button.onClick.AddListener(() => IncreaseFoodPrices(0.2f));
+        //third_IncreaseFoodPrice_Button.onClick.AddListener(() => IncreaseFoodPrices(0.3f));
+        //fourth_IncreaseFoodPrice_Button.onClick.AddListener(() => IncreaseFoodPrices(0.4f));
 
-        firstSpeedPostion_Button.onClick.AddListener(() => IncreaseMoveSpeed(0.1f));
-        secoundSpeedPostion_Button.onClick.AddListener(() => IncreaseMoveSpeed(0.2f));
-        thirdSpeedPostion_Button.onClick.AddListener(() => IncreaseMoveSpeed(0.2f));
+        //firstSpeedPostion_Button.onClick.AddListener(() => IncreaseMoveSpeed(0.1f));
+        //secoundSpeedPostion_Button.onClick.AddListener(() => IncreaseMoveSpeed(0.2f));
+        //thirdSpeedPostion_Button.onClick.AddListener(() => IncreaseMoveSpeed(0.2f));
 
         // Fill Image 업데이트
         levelProgressImage.fillAmount = 0;
@@ -384,7 +384,7 @@ public class GameManager : MonoBehaviour
     }
 
     // 스킬 업그레이드 처리 메소드
-    void HandleSkillUpgrade(Button button, GameObject uiListItem, int cost)
+    void HandleSkillUpgrade(Button button, GameObject uiListItem, int cost, Action successCallback = null)
     {
         // 자산이 충분한지 확인
         if (!PlayerHasEnoughCurrency(cost))
@@ -405,6 +405,7 @@ public class GameManager : MonoBehaviour
 
         // Fill Image 업데이트
         UpdateFillImage();
+        successCallback?.Invoke();
 
         Debug.Log("스킬 업그레이드 완료: " + button.name);
     }
@@ -506,9 +507,13 @@ public class GameManager : MonoBehaviour
         }
 
         // 레벨 UI 업데이트
-        UpdateFriedRiceLevelUI();
-        UpdateRamenLevelUI();
-        UpdateSteakLevelUI();
+        //UpdateFriedRiceLevelUI();
+        //UpdateRamenLevelUI();
+        //UpdateSteakLevelUI();
+
+        RefreshFriedRicePriceUI();
+        RefreshRamenPriceUI();
+        RefreshSteakPriceUI();
     }
 
     // 이동 속도 증가 함수
@@ -820,6 +825,15 @@ public class GameManager : MonoBehaviour
     // 스테이크 레벨 UI 업데이트
     void UpdateSteakLevelUI()
     {
+        RefreshSteakPriceUI();
+
+        // 이벤트 카운터 증가
+        eventCount++;
+        UpdateFillImage(); // Fill Image 업데이트
+    }
+
+    private void RefreshSteakPriceUI()
+    {
         if (steakLevel < steakPrices.Length)
         {
             steakLevelUpButtonText.text = FormatPrice(steakPrices[steakLevel - 1]);
@@ -835,13 +849,19 @@ public class GameManager : MonoBehaviour
         UpdateStarImages(steakLevel, steakStarImages);
         steakGaugeBar.fillAmount = (float)steakLevel / steakPrices.Length;
 
+    }
+
+    // 볶음밥 레벨 UI 업데이트
+    void UpdateFriedRiceLevelUI()
+    {
+        RefreshFriedRicePriceUI();
+
         // 이벤트 카운터 증가
         eventCount++;
         UpdateFillImage(); // Fill Image 업데이트
     }
 
-    // 볶음밥 레벨 UI 업데이트
-    void UpdateFriedRiceLevelUI()
+    private void RefreshFriedRicePriceUI()
     {
         if (friedRiceLevel < friedRicePrices.Length)
         {
@@ -859,14 +879,19 @@ public class GameManager : MonoBehaviour
 
         UpdateStarImages(friedRiceLevel, friedRiceStarImages);
         friedRiceGaugeBar.fillAmount = (float)friedRiceLevel / friedRicePrices.Length;
+    }
+
+    // 라면 레벨 UI 업데이트
+    void UpdateRamenLevelUI()
+    {
+        RefreshRamenPriceUI();
 
         // 이벤트 카운터 증가
         eventCount++;
         UpdateFillImage(); // Fill Image 업데이트
     }
 
-    // 라면 레벨 UI 업데이트
-    void UpdateRamenLevelUI()
+    private void RefreshRamenPriceUI()
     {
         if (ramenLevel < ramenPrices.Length)
         {
@@ -880,14 +905,11 @@ public class GameManager : MonoBehaviour
 
 
         }
-            ramenLevelText.text = $"Lv.{ramenLevel}"; // 최대 레벨 텍스트 업데이트
+        ramenLevelText.text = $"Lv.{ramenLevel}"; // 최대 레벨 텍스트 업데이트
 
         UpdateStarImages(ramenLevel, ramenStarImages);
         ramenGaugeBar.fillAmount = (float)ramenLevel / ramenPrices.Length;
 
-        // 이벤트 카운터 증가
-        eventCount++;
-        UpdateFillImage(); // Fill Image 업데이트
     }
 
     [Space(9), Header("음식 레벨의 별 활성화 레벨")]
