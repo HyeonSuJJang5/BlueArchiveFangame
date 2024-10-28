@@ -934,7 +934,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.0a
+  m_text: 500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -2062,7 +2062,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.6a
+  m_text: 800
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -3951,7 +3951,7 @@ MonoBehaviour:
   cookingTimeReduction: 0
   audioManager: {fileID: 0}
   Text_Gold: {fileID: 882756426}
-  PlayerMoney: 100000
+  PlayerMoney: 0
   friedRiceLevel: 1
   friedRiceLevelUpButton: {fileID: 230409498}
   friedRiceGaugeBar: {fileID: 9320068}
@@ -3962,6 +3962,7 @@ MonoBehaviour:
   friedRiceLevelUpButtonText: {fileID: 1408967479}
   friedRicePriceText: {fileID: 1473082988}
   friedRicePrices: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000c0000000e0000001000000013000000160000001a0000001f000000250000002c000000340000003e0000004a00000058000000690000007e00000097000000b5000000d9000000040100003801000076010000c00100001902000084020000040300009e03000057040000350500003f0600007e070000fd080000c90a0000f10c0000870f0000a21200005c160000d41a000031200000a12600005a2e0000
+  friedRiceSales: 0f00000014000000190000001e00000023000000280000002d000000320000003c0000007d00000087000000910000009b000000210000002300000025000000270000002a0000002d0000003000000033000000370000003b0000003f00000088000000920000009d000000a9000000b6000000c4000000d3000000e3000000f5000000080100001d010000330100004b01000065010000810100009f010000c0010000e301000009020000320200005e0200008e020000c2020000fa02000036030000f4060000
   ramenLevel: 1
   ramenLevelUpButton: {fileID: 1395741217}
   ramenGaugeBar: {fileID: 221457827}
@@ -3972,6 +3973,7 @@ MonoBehaviour:
   ramenLevelUpButtonText: {fileID: 54110583}
   ramenPriceText: {fileID: 2139505516}
   ramenPrices: 280000003000000039000000440000005100000061000000740000008b000000a6000000c7000000ee0000001d010000560100009a010000ec0100004e020000c402000051030000fa030000c5040000b9050000de0600003d080000e2090000dc0b00003b0e0000131100007d14000096180000801d0000662300007a2a0000f8320000293d00006449000011580000ae690000d07e00002c9800009bb6000020db0000f30601008a3b0100a57a01005fc601003e2102004a8e0200251103002cae03009b6a0400
+  ramenSales: f000000002010000160100002c01000044010000660100007601000092010000b2010000a8030000f2030000210200004c0200007b020000ad020000e30200001e0300005d030000a1030000e80300003804000092040000ec040000500500007c0b00006c0c0000660d0000740e0000a00f0000e01000003e120000b013000040150000f8160000ce180000c21a0000e81c0000361f0000e82100006824000056270000762a0000dc2d0000883100007a350000c6390000623e000062430000c6480000309d0000
   steakLevel: 1
   steakLevelUpButton: {fileID: 1900046063}
   steakGaugeBar: {fileID: 1732085998}
@@ -3981,7 +3983,8 @@ MonoBehaviour:
   - {fileID: 1435194525}
   steakLevelUpButtonText: {fileID: 961090265}
   steakPriceText: {fileID: 1496954375}
-  steakPrices: d007000060090000400b0000840d0000361000007413000052170000021c000098210000502800005c3000000c3a0000a64500008e53000046640000507800006090000048ad0000eecf00007ef900006a2b01004c67010022af010058050200d26c020000e90200fc7d0300c630040058070500ce080600c03d070088b008006a6d0a0052830c00f2030f00bc041200509f150058f21900d2221f00005d2500f8d52c0098cd350048904000f2794d00bef85c00e6906f000ce18500a8a7a00034c9c000d457e700
+  steakPrices: e8030000b0040000a0050000c206000066080000ec090000d60b0000fc0d0000cc100000281400002e180000061d0000a64500008e53000046640000507800006090000048ad0000eecf00007ef900006a2b01004c67010022af010058050200d26c020000e90200fc7d0300c630040058070500ce080600c03d070088b008006a6d0a0052830c00f2030f00bc041200509f150058f21900d2221f00005d2500f8d52c0098cd350048904000f2794d00bef85c00e6906f000ce18500a8a7a00034c9c000d457e700
+  steakSales: c01200003c140000e0150000a2170000821900008a1b0000ba1d00001c200000b0220000ec4a0000e650000062570000605e0000ea650000146e0000de76000066800000ac8a0000c4950000b8a10000a6ae0000a2bc0000b6cb00000adc00003cdb01003e010200562a0200ac5602009086020048ba020024f20200b44704009c6f030000b60300fa0104000c540400b8ac04006c0c0500d273050080e30500165c06005cde0600066b0700f002080000a70800305809008e170a003ce60a007ac50b00707b1900
   friedRicePanel: {fileID: 31937682}
   ramenPanel: {fileID: 431591338}
   steakPanel: {fileID: 324136055}
@@ -15774,7 +15777,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3.0a
+  m_text: 1.5a
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -16175,9 +16178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '400
-
-'
+  m_text: 400
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -16602,8 +16603,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00074386597}
-  m_SizeDelta: {x: 100, y: 178.74367}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 245.77254}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1069262900
 MonoBehaviour:
@@ -18691,7 +18692,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3.0a
+  m_text: 1.5a
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -19199,7 +19200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.3a
+  m_text: 700
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -19954,7 +19955,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3.0a
+  m_text: 2.0a
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -22595,7 +22596,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.2a
+  m_text: 600
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -24727,7 +24728,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.6a
+  m_text: 800
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -25949,7 +25950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.6a
+  m_text: 900
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -26160,7 +26161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 200
+  m_text: 600
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
   m_sharedMaterial: {fileID: -1714773846066492299, guid: b756ff55c35d01b4b89aa66f5feeb1ac, type: 2}
@@ -29453,7 +29454,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 426.00006, y: -1015}
+  m_AnchoredPosition: {x: 426.00006, y: -1038}
   m_SizeDelta: {x: 1232, y: 768}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1772737049

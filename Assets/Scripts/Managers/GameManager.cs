@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
     private int[] friedRicePrices = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 19, 22, 26, 31, 37, 44, 52, 62, 74, 88, 105, 126, 151, 181, 217, 260, 312, 374, 448, 537, 644, 772, 926, 1111, 1333, 1599, 1918, 2301, 2761, 3313, 3975, 4770, 5724, 6868, 8241, 9889, 11866 };
 
     // 새롭게 제공된 sale 데이터
+    [SerializeField]
     private int[] friedRiceSales = { 3, 4, 5, 6, 7, 8, 9, 10, 12, 25, 27, 29, 31, 33, 35, 37, 39, 42, 45, 48, 51, 55, 59, 63, 136, 146, 157, 169, 182, 196, 211, 227, 245, 264, 285, 307, 331, 357, 385, 415, 448, 483, 521, 562, 606, 654, 706, 762, 822, 1780 };
 
     [Header("라멘 레벨 시스템")]
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour
     private int[] ramenPrices = { 40, 48, 57, 68, 81, 97, 116, 139, 166, 199, 238, 285, 342, 410, 492, 590, 708, 849, 1018, 1221, 1465, 1758, 2109, 2530, 3036, 3643, 4371, 5245, 6294, 7552, 9062, 10874, 13048, 15657, 18788, 22545, 27054, 32464, 38956, 46747, 56096, 67315, 80778, 96933, 116319, 139582, 167498, 200997, 241196, 289435 };
 
     // 새롭게 제공된 sale 데이터
+    [SerializeField]
     private int[] ramenSales = { 120, 129, 139, 150, 162, 174, 187, 201, 217, 468, 505, 545, 588, 635, 685, 739, 798, 861, 929, 1000, 1080, 1170, 1260, 1360, 2940, 3180, 3430, 3700, 4000, 4320, 4670, 5040, 5440, 5880, 6350, 6850, 7400, 7990, 8680, 9320, 10070, 10870, 11740, 12680, 13690, 14790, 15970, 17250, 18630, 40240 };
 
     [Header("스테이크 레벨 시스템")]
@@ -94,6 +96,7 @@ public class GameManager : MonoBehaviour
     private int[] steakPrices = { 2000, 2400, 2880, 3460, 4150, 4980, 5970, 7170, 8600, 10320, 12380, 14860, 17830, 21390, 25670, 30800, 36960, 44360, 53230, 63870, 76650, 91980, 110370, 132440, 158930, 190720, 228860, 274630, 329560, 395470, 474560, 569480, 683370, 820050, 984050, 1180860, 1417040, 1700440, 2040530, 2448640, 2938360, 3526040, 4231240, 5077490, 6092990, 7311590, 8773900, 10528680, 12634420, 15161300 };
 
     // 새롭게 제공된 sale 데이터
+    [SerializeField]
     private int[] steakSales = { 4800, 5180, 5600, 6050, 6530, 7050, 7610, 8220, 8880, 19180, 20710, 22370, 24160, 26090, 28180, 30430, 32870, 35500, 38340, 41400, 44710, 48290, 52150, 56330, 121660, 131390, 141910, 153260, 165520, 178760, 193060, 280500, 225180, 243200, 262650, 283660, 306360, 330860, 357330, 385920, 416790, 450140, 486150, 525040, 567040, 612400, 661390, 714300, 771450, 1670000 };
 
     [Header("패널들")]
@@ -119,8 +122,8 @@ public class GameManager : MonoBehaviour
     public Button chefAddButton; // Chef 추가 버튼
     public TextMeshProUGUI servingCostText; // Serving 추가에 필요한 비용 표시
     public TextMeshProUGUI chefCostText; // Chef 추가에 필요한 비용 표시
-    private int servingCost = 200; // Serving 추가에 필요한 금액
-    private int chefCost = 400; // Chef 추가에 필요한 금액
+    private int servingCost = 500; // Serving 추가에 필요한 금액
+    private int chefCost = 300; // Chef 추가에 필요한 금액
 
     private int steakUnloookCost = 1000; // 스테이크 해금에 필요한 금액 
     private int RamenUnlookCost = 150; // 라면 해금에 필요한 금액
@@ -335,6 +338,22 @@ public class GameManager : MonoBehaviour
         ramenPurchaseButton.onClick.AddListener(DeleteRamenUI);
         steakPurchaseButton.onClick.AddListener(DeleteSteakUI);
 
+        // 스킬 업그레이드 버튼에 클릭 이벤트 등록
+        servingAddButton.onClick.AddListener(() => HandleSkillUpgrade(servingAddButton, Serving_UIListltem, 500));
+        chefAddButton.onClick.AddListener(() => HandleSkillUpgrade(chefAddButton, Chef_UIListltem, 300));
+
+        firstCookingTime_Button.onClick.AddListener(() => HandleSkillUpgrade(firstCookingTime_Button, firstCookingTime_UIListltem, 500));
+        secoundCookingTime_Button.onClick.AddListener(() => HandleSkillUpgrade(secoundCookingTime_Button, secoundCookingTime_UIListltem, 800));
+
+        first_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(first_IncreaseFoodPrice_Button, first_IncreaseFoodPrice_UIListltem, 600));
+        secound_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(secound_IncreaseFoodPrice_Button, secound_IncreaseFoodPrice_UIListltem, 800));
+        third_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(third_IncreaseFoodPrice_Button, third_IncreaseFoodPrice_UIListltem, 1500));
+        fourth_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(fourth_IncreaseFoodPrice_Button, fourth_IncreaseFoodPrice_UIListltem, 2000));
+
+        firstSpeedPostion_Button.onClick.AddListener(() => HandleSkillUpgrade(firstSpeedPostion_Button, firstSpeedPostion_UIListltem, 700));
+        secoundSpeedPostion_Button.onClick.AddListener(() => HandleSkillUpgrade(secoundSpeedPostion_Button, secoundSpeedPostion_UIListltem, 900));
+        thirdSpeedPostion_Button.onClick.AddListener(() => HandleSkillUpgrade(thirdSpeedPostion_Button, thirdSpeedPostion_UIListltem, 1500));
+
         // 기존 버튼 이벤트 등록
         firstCookingTime_Button.onClick.AddListener(() => ReduceCookingTime(0.2f)); // 20% 감소
         secoundCookingTime_Button.onClick.AddListener(() => ReduceCookingTime(0.3f)); // 30% 감소
@@ -347,22 +366,6 @@ public class GameManager : MonoBehaviour
         firstSpeedPostion_Button.onClick.AddListener(() => IncreaseMoveSpeed(0.1f));
         secoundSpeedPostion_Button.onClick.AddListener(() => IncreaseMoveSpeed(0.2f));
         thirdSpeedPostion_Button.onClick.AddListener(() => IncreaseMoveSpeed(0.2f));
-
-        // 스킬 업그레이드 버튼에 클릭 이벤트 등록
-        servingAddButton.onClick.AddListener(() => HandleSkillUpgrade(servingAddButton, Serving_UIListltem, 200));
-        chefAddButton.onClick.AddListener(() => HandleSkillUpgrade(chefAddButton, Chef_UIListltem, 400));
-
-        firstCookingTime_Button.onClick.AddListener(() => HandleSkillUpgrade(firstCookingTime_Button, firstCookingTime_UIListltem, 1000));
-        secoundCookingTime_Button.onClick.AddListener(() => HandleSkillUpgrade(secoundCookingTime_Button, secoundCookingTime_UIListltem, 1600));
-
-        first_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(first_IncreaseFoodPrice_Button, first_IncreaseFoodPrice_UIListltem, 1200));
-        secound_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(secound_IncreaseFoodPrice_Button, secound_IncreaseFoodPrice_UIListltem, 1600));
-        third_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(third_IncreaseFoodPrice_Button, third_IncreaseFoodPrice_UIListltem, 3000));
-        fourth_IncreaseFoodPrice_Button.onClick.AddListener(() => HandleSkillUpgrade(fourth_IncreaseFoodPrice_Button, fourth_IncreaseFoodPrice_UIListltem, 4000));
-
-        firstSpeedPostion_Button.onClick.AddListener(() => HandleSkillUpgrade(firstSpeedPostion_Button, firstSpeedPostion_UIListltem, 1300));
-        secoundSpeedPostion_Button.onClick.AddListener(() => HandleSkillUpgrade(secoundSpeedPostion_Button, secoundSpeedPostion_UIListltem, 1600));
-        thirdSpeedPostion_Button.onClick.AddListener(() => HandleSkillUpgrade(thirdSpeedPostion_Button, thirdSpeedPostion_UIListltem, 3000));
 
         // Fill Image 업데이트
         levelProgressImage.fillAmount = 0;
@@ -396,7 +399,10 @@ public class GameManager : MonoBehaviour
         // 스킬 업그레이드 후 UI 비활성화
         uiListItem.SetActive(false);
 
+        Debug.Log("확인용 이벤트 카운터 증가하기 전");
         eventCount++; // 이벤트 카운터 증가
+        Debug.Log("확인용 이벤트 카운터 증가 후");
+
         // Fill Image 업데이트
         UpdateFillImage();
 
@@ -742,7 +748,7 @@ public class GameManager : MonoBehaviour
         if (PlayerMoney >= servingCost)
         {
             Serving.SetActive(true);
-            DeductCurrency(servingCost);
+            //DeductCurrency(servingCost);
         }
         else
         {
@@ -755,7 +761,7 @@ public class GameManager : MonoBehaviour
         if (PlayerMoney >= chefCost)
         {
             Chef.SetActive(true);
-            DeductCurrency(chefCost);
+            //DeductCurrency(chefCost);
 
             Debug.Log("새 쉐프 추가됨");
         }

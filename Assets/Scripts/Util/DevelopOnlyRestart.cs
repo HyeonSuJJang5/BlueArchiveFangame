@@ -54,7 +54,7 @@ public class DevelopOnlyRestart : MonoBehaviour
             _pressTime = -1f;
 
             Destroy(this); // 스크립트만 제거
-            UnityEngine.SceneManagement.SceneManager.LoadScene("First_GameScene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Intro");
         }
     }
 
