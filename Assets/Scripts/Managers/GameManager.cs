@@ -200,7 +200,7 @@ public class GameManager : MonoBehaviour
     private Image levelProgressImage; // Fill Image를 참조
 
     private int eventCount = 0; // 이벤트 카운터
-    private const int maxEvents = 53; // 최대 이벤트 수
+    private const int maxEvents = 41; // 최대 이벤트 수
 
     public TextMeshProUGUI steakLevelText; // 스테이크 레벨 UI 요소
     public TextMeshProUGUI friedRiceLevelText; // 볶음밥 레벨 UI 요소
@@ -331,7 +331,7 @@ public class GameManager : MonoBehaviour
 
         // 비용 텍스트 초기화
         servingCostText.text = $"{servingCost}";
-        chefCostText.text = $" {chefCost}";
+        chefCostText.text = $"{chefCost}";
 
         // Purchase 버튼 클릭 이벤트 등록
         friedRicePurchaseButton.onClick.AddListener(DeleteFriedRiceUI);
@@ -716,28 +716,28 @@ public class GameManager : MonoBehaviour
         double value = amount;
 
         // 1000원 이하일 경우 접미사 없음
-        if (amount <= 1000)
+        if (amount < 1000)
         {
             return $"{amount}";
         }
 
         // 접미사 결정
-        if (amount >= 1000000000000) // 1조 이상
+        if (amount > 1000000000000 - 1) // 1조 이상
         {
             value /= 1000000000000;
             suffix = "d";
         }
-        else if (amount >= 1000000000) // 10억 이상
+        else if (amount > 1000000000 - 1) // 10억 이상
         {
             value /= 1000000000;
             suffix = "c";
         }
-        else if (amount >= 1000000) // 100만 이상
+        else if (amount > 1000000 - 1) // 100만 이상
         {
             value /= 1000000;
             suffix = "b";
         }
-        else if (amount >= 1000) // 1000 이상
+        else if (amount > 1000 - 1) // 1000 이상
         {
             value /= 1000;
             suffix = "a";
@@ -841,6 +841,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            steakPriceText.text = FormatPrice(steakSales[steakLevel - 1]);
             steakLevelUpButtonText.text = "Max";
             steakLevelUpButton.interactable = false;
         }
@@ -871,6 +872,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            friedRicePriceText.text = FormatPrice(friedRiceSales[friedRiceLevel - 1]);
             friedRiceLevelUpButtonText.text = "Max";
             friedRiceLevelUpButton.interactable = false;
 
@@ -900,6 +902,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            ramenPriceText.text = FormatPrice(ramenSales[ramenLevel - 1]);
             ramenLevelUpButtonText.text = "Max";
             ramenLevelUpButton.interactable = false;
 
