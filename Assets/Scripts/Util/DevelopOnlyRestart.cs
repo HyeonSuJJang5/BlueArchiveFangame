@@ -42,11 +42,7 @@ public class DevelopOnlyRestart : MonoBehaviour
             //Debug.Log("press");
         }
 
-        // debug
-        //else
-        //{
-        //    Debug.Log($"{Time.time} // {_pressTime + restartTime}");
-        //}
+        
 
         // 일정시간동안 누르는 경우
         if (_pressTime > 0f && _pressTime + restartTime <= Time.time)
