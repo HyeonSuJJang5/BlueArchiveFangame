@@ -945,13 +945,6 @@ public class GameManager : MonoBehaviour
         {
             starImages[i].gameObject.SetActive(target.IsActive(i, level));
         }
-
-        //if (level >= 3)
-        //    starImages[0].gameObject.SetActive(true);
-        //if (level >= 7)
-        //    starImages[1].gameObject.SetActive(true);
-        //if (level >= 10)
-        //    starImages[2].gameObject.SetActive(true);
     }
 
     // 스테이크 레벨업
